@@ -39,3 +39,24 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 } 
+
+
+document.getElementById("descargarPDF").addEventListener("click", function() {
+    // Reemplaza 'ruta/al/archivo.pdf' con la URL de tu archivo PDF
+    var pdfUrl = 'https://drive.google.com/file/d/1IZoFITHf8ssJwzgKeIQdRj6LkAIvhtXI/view?usp=drive_link';
+
+    // Crea un elemento <a> invisible
+    var link = document.createElement('a');
+    link.href = pdfUrl;
+    link.target = '_blank';
+    link.download = 'Download CV'; // Puedes cambiar el nombre del archivo si lo deseas
+
+    // Agrega el elemento <a> al DOM
+    document.body.appendChild(link);
+
+    // Simula un clic en el enlace para iniciar la descarga
+    link.click();
+
+    // Elimina el elemento <a> del DOM
+    document.body.removeChild(link);
+});
